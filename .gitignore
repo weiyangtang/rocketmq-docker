@@ -1,2 +1,3 @@
 broker-*/
 namesrv/
+docker-compose.yml
