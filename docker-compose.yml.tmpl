@@ -15,7 +15,7 @@ services:
     container_name: broker-10911-master
     network_mode: "host"
     environment:
-      - NAMESRV_ADDR=172.17.72.93:9876
+      - NAMESRV_ADDR=${NAMESRV_IP}:9876
     volumes:
       - ./broker-10911-master/logs:/home/rocketmq/logs
       - ./broker-10911-master/store:/home/rocketmq/store
@@ -28,7 +28,7 @@ services:
     container_name: broker-12911-master
     network_mode: "host"
     environment:
-      - NAMESRV_ADDR=172.17.72.93:9876
+      - NAMESRV_ADDR=${NAMESRV_IP}:9876
     volumes:
       - ./broker-12911-master/logs:/home/rocketmq/logs
       - ./broker-12911-master/store:/home/rocketmq/store
@@ -41,7 +41,7 @@ services:
     container_name: broker-14911-master
     network_mode: "host"
     environment:
-      - NAMESRV_ADDR=172.17.72.93:9876
+      - NAMESRV_ADDR=${NAMESRV_IP}:9876
     volumes:
       - ./broker-14911-master/logs:/home/rocketmq/logs
       - ./broker-14911-master/store:/home/rocketmq/store
@@ -52,5 +52,5 @@ services:
     container_name: rocketmq-dashboard
     network_mode: host
     environment:
-      - JAVA_OPTS=-Drocketmq.namesrv.addr=172.17.72.93:9876
+      - JAVA_OPTS=-Drocketmq.namesrv.addr=${NAMESRV_IP}:9876
     image: apacherocketmq/rocketmq-dashboard:latest
